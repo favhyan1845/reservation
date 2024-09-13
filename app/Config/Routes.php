@@ -9,3 +9,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'servicesController::index');
 $routes->get('/booking-reservation', 'servicesController::bookingReservations');
 $routes->get('/modify-reservation/(:num)', 'servicesController::modifyingReservations/$1');
+$routes->get('/cancel-reservation/(:num)', 'servicesController::cancellingReservations/$1');
+$routes->get('/view-reservation/(:num)', 'servicesController::viewingReservations/$1');

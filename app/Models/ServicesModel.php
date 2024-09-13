@@ -24,5 +24,18 @@
             $service = $builder->insert($data); 
             return $service;
         }
+        public function cancelService($data){
+            $db = \Config\Database::connect();
+            $builder = $db->table($this->table);
+            $builder->where('id', $data['id']);
+            $service = $builder->update($data);  
+            return $service;
+        }
+        public function viewService($data){
+            $db = \Config\Database::connect();
+            $builder = $db->table($this->table);
+            $builder->where('id', $data);
+            return $builder->get()->getResultArray()[0];
+        }
 
 }

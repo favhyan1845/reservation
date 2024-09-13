@@ -70,4 +70,12 @@ abstract class BaseController extends Controller
 		$servicesModel = new ServicesModel();
 		return $servicesModel->updateService($data);
 	}
+	public function servicesCancel($data){
+		$servicesModel = new ServicesModel();
+		return $servicesModel->cancelService($data);
+	}
+	public function servicesView($data){
+		$servicesModel = new ServicesModel();
+		return $servicesModel->viewService($data);
+	}
 }

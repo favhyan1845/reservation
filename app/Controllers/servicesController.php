@@ -58,4 +58,35 @@ class servicesController extends BaseController
             return 401;
         }        
     }
+    public function cancellingReservations($id): string
+    {
+        $user = $this->request->getGet('user');
+        $email = $this->request->getGet('email');
+        $dateIn = $this->request->getGet('dateIn');
+        $dateOut = $this->request->getGet('dateOut');
+
+        $data = [
+                'id' => $id,
+                'user' => $user,
+                'email' => $email,
+                'date-in' => $dateIn,
+                'date-out' => $dateOut,
+                'type' => 3,
+                'status' => 'N'
+        ];
+
+		$data['service'] = $this->servicesCancel($data);
+
+        if($data['service'] === true){
+            return 200;
+        }else{
+            return 401;
+        }        
+    }
+    public function viewingReservations($id): string
+    {
+		$data['service'] = $this->servicesView($id);
+        return view('view-reservation',  ['data' => $data]);
+        return $data['service'];    
+    }
 }
