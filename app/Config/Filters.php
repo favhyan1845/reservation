@@ -35,6 +35,10 @@ class Filters extends BaseConfig
      *
      * @var array<string, array<string, array<string, string>>>|array<string, list<string>>
      */
+    // public $aliases = [
+    // 'cors' => \App\Filters\Cors::class,
+    // // other filters...
+    // ];
     public array $globals = [
         'before' => [
             'cors',
@@ -43,7 +47,7 @@ class Filters extends BaseConfig
             // 'invalidchars',
         ],
         'after' => [
-            'toolbar',
+            // 'toolbar',
             // 'honeypot',
             // 'secureheaders',
         ],

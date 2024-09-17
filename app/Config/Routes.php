@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', 'servicesController::index');
-$routes->get('/booking/', 'servicesController::bookingReservations');
+$routes->post('/booking/', 'servicesController::bookingReservations');
 
 $routes->get('/modify-reservation/(:num)', 'servicesController::modifyingReservations/$1');
 $routes->get('/cancel-reservation/(:num)', 'servicesController::cancellingReservations/$1');

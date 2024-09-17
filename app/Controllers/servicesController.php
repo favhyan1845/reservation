@@ -6,15 +6,23 @@ class servicesController extends BaseController
 {
     public function index(): string
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 		$data = $this->servicesGetAll();
         return json_encode($data);
     }
     public function bookingReservations(): string
     {
-        $user = $this->request->getGet('user');
-        $email = $this->request->getGet('email');
-        $dateIn = $this->request->getGet('dateIn');
-        $dateOut = $this->request->getGet('dateOut');
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+        $user = $this->request->getPost('user');
+        $email = $this->request->getPost('email');
+        $dateIn = $this->request->getPost('dateIn');
+        $dateOut = $this->request->getPost('dateOut');
 
         $data = [
                 'user' => $user,
@@ -35,6 +43,10 @@ class servicesController extends BaseController
     }
     public function modifyingReservations($id): string
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
         $user = $this->request->getGet('user');
         $email = $this->request->getGet('email');
         $dateIn = $this->request->getGet('dateIn');
@@ -60,6 +72,10 @@ class servicesController extends BaseController
     }
     public function cancellingReservations($id): string
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
         $user = $this->request->getGet('user');
         $email = $this->request->getGet('email');
         $dateIn = $this->request->getGet('dateIn');
@@ -85,6 +101,10 @@ class servicesController extends BaseController
     }
     public function viewingReservations($id): string
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 		$data['service'] = $this->servicesView($id);
         return view('view-reservation',  ['data' => $data]);
         return $data['service'];    

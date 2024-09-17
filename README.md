@@ -1,3 +1,10 @@
+
+*--------------------------------------------------*
+Instalacion.
+
+Backend, clone el repositorio en un ambiente apache(branch services), configurar la db en el archivo principal database.php o .env, correr archivo db.sql en un motor mysql
+
+----------------------------------------------------
 Servicio Backend (CodeIgniter 4):
 Tecnología: CodeIgniter 4
 Responsabilidades:
