@@ -31,9 +31,11 @@ class Cors implements FilterInterface
         header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
 
-        // Manejo de la solicitud OPTIONS (preflight)
+                // If the request is an OPTIONS request, return 200
         if ($request->getMethod() === 'options') {
-            die();
+            $response = service('response');
+            $response->setStatusCode(200);
+            return $response;
         }
     }
     /**

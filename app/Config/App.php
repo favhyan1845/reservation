@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost/linktic-prueba/293f82a87eea91d2976f9fa1d154e80c/project-root/public/';
+    public string $baseURL = 'http://localhost/linktic-prueba/reservation/public/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -29,7 +29,7 @@ class App extends BaseConfig
      *
      * @var list<string>
      */
-    public array $allowedHostnames = [];
+    public array $allowedHostnames = ['*'];
 
     /**
      * --------------------------------------------------------------------------
