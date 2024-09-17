@@ -7,7 +7,7 @@ class servicesController extends BaseController
     public function index(): string
     {
 		$data = $this->servicesGetAll();
-        return view('index',  ['data' => $data]);
+        return json_encode($data);
     }
     public function bookingReservations(): string
     {
